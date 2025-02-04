@@ -5,13 +5,13 @@ import { getAuth } from "firebase/auth"; // Import the Firebase Authentication m
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAjILM3zvU_0fss3LcVjp24Ic2MG7v35c0",
-  authDomain: "aryloft-9f543.firebaseapp.com",
-  projectId: "aryloft-9f543",
-  storageBucket: "aryloft-9f543.firebasestorage.app",
-  messagingSenderId: "289414078848",
-  appId: "1:289414078848:web:f3add49e30d90e6aac2165",
-  measurementId: "G-ZW7QELJX8R"
+  apiKey: "API_KEY",
+  authDomain: "PROJECT_ID.firebaseapp.com",
+  projectId: "PROJECT_ID",
+  storageBucket: "PROJECT_ID.firebasestorage.app",
+  messagingSenderId: "MESSAGING_SENDER_ID",
+  appId: "APP_ID",
+  measurementId: "MESASURE_ID"
 };
 
 // Initialize Firebase
