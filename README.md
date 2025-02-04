@@ -59,43 +59,6 @@ A modern e-commerce experience with seamless Google authentication and state man
 
 ---
 
-<<<<<<< HEAD
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/yourusername/aryloft.git
-   cd aryloft
-   ```
-
-2. **Install Dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Firebase Setup:**
-   - Create a Firebase project [here](https://console.firebase.google.com/).
-   - Enable Google Sign-In in the Authentication section.
-   - Replace the Firebase config in `firebase.config.js` with your project credentials.
-
-4. **Run the Application:**
-   ```bash
-   npm start
-   ```
-
-## 📂 Project Structure
-
-```
-aryloft/
-├── src/
-│   ├── components/
-│   │   └── Login.js
-│   ├── redux/
-│   │   └── bazarSlice.js
-│   ├── firebase.config.js
-│   └── App.js
-├── public/
-├── package.json
-└── README.md
-=======
 ## 📥 Quick Start
 
 ### 1. Clone & Install
@@ -138,7 +101,6 @@ frontend/
 │   └── ...             # Configuration files
 server/
 ├── server.js           # Mock backend API
->>>>>>> ae0693f922b957ff1d110d0709b6d6bfa26a036d
 ```
 
 ---
@@ -149,11 +111,7 @@ server/
 |----------|--------------|------|
 | ![Home](https://github.com/user-attachments/assets/b188c298-4898-447f-9a84-b424e196e7df) | ![Products](https://github.com/user-attachments/assets/a2c5b013-3ecb-4c4d-8882-6f0db921d786) | ![Cart](https://github.com/user-attachments/assets/60fe7d87-7aa0-4f36-9a4a-4fed3e56daf9) |
 
-<<<<<<< HEAD
-_Add screenshots here to showcase your UI._
-=======
 ---
->>>>>>> ae0693f922b957ff1d110d0709b6d6bfa26a036d
 
 ## 🤝 Contributing
 
@@ -172,13 +130,6 @@ We welcome contributions! Please follow these steps:
 
 ## 📜 License
 
-<<<<<<< HEAD
-- **Developer:** Priyanshu Kumar
-- **GitHub:** [@yourusername](https://github.com/yourusername)
-
-Happy Coding! 🚀
-
-=======
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
@@ -193,4 +144,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ---
 
 Made with ❤️ and ☕ by the Aryloft team. Happy shopping! 🛒
->>>>>>> ae0693f922b957ff1d110d0709b6d6bfa26a036d
