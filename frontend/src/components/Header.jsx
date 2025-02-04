@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import logo from "../assets/header-logo.webp";
-import cartIcon from "../assets/cartLogo.png";
+import logo from "../assets/header-logo.svg";
+import cartIcon from "../assets/cartLogo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { ToastContainer } from "react-toastify";
