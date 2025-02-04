@@ -10,16 +10,16 @@ const Stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 app.use(
   cors({
-    origin: ["*"],
+    origin: ["*" || API_CALL],
   })
 );
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static(path.join(__dirname, "..", "client", "dist")));
+app.use(express.static(path.join(__dirname, "..", "frontend", "dist")));
 
 app.get('/*', (req, res) => {
-	res.sendFile(path.join(__dirname, '../frontend/index.html'), (err) => {
+	res.sendFile(path.join(__dirname, '../frontend/dist/index.html'), (err) => {
 		if (err) {
 			console.error('Error sending file:', err);
 		}

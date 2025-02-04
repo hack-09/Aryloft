@@ -1,7 +1,6 @@
 import React from "react";
 import {
   GoogleAuthProvider,
-  getAuth,
   signInWithPopup,
   signOut,
 } from "firebase/auth";
@@ -9,9 +8,9 @@ import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../redux/bazarSlice";
 import { useNavigate } from "react-router-dom";
+import { auth } from ".././firebase.config";
 
 const Login = () => {
-  const auth = getAuth();
   const provider = new GoogleAuthProvider();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -31,19 +30,25 @@ const Login = () => {
           })
         );
         setTimeout(() => {
-          navigate("/");
+          navigate("/"); // Navigate to homepage or desired route
         }, 1500);
       })
       .catch((err) => {
-        console.error(err);
+        console.error("Google login error:", err);
+        toast.error("Login failed. Please try again.");
       });
   };
 
   const handleSignOut = () => {
-    signOut(auth).then(() => {
-      toast.success("Signed Out Successfully");
-      dispatch(removeUser());
-    });
+    signOut(auth)
+      .then(() => {
+        toast.success("Signed Out Successfully");
+        dispatch(removeUser());
+      })
+      .catch((err) => {
+        console.error("Sign out error:", err);
+        toast.error("Sign out failed. Please try again.");
+      });
   };
 
   return (
@@ -51,7 +56,7 @@ const Login = () => {
       <div className="w-full max-w-md p-8 space-y-8 bg-white shadow-lg rounded-lg">
         <div className="text-center">
           <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
-            Welcome to eBazaar
+            Welcome to Aryloft
           </h2>
           <p className="mt-2 text-sm text-gray-600">
             Sign in to your account
@@ -63,12 +68,8 @@ const Login = () => {
               onClick={handleGoogleLogin}
               className="w-full flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              <svg
-                className="w-5 h-5 mr-2"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path d="M10 0C4.477 0 0 4.477 0 10c0 4.411 2.865 8.138 6.839 9.465.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C17.137 18.135 20 14.411 20 10c0-5.523-4.477-10-10-10z" />
+              <svg xmlns="http://www.w3.org/2000/svg" x="50px" y="0px" width="20" height="30" margin="20px" viewBox="0 0 50 50">
+              <path d="M 26 2 C 13.308594 2 3 12.308594 3 25 C 3 37.691406 13.308594 48 26 48 C 35.917969 48 41.972656 43.4375 45.125 37.78125 C 48.277344 32.125 48.675781 25.480469 47.71875 20.9375 L 47.53125 20.15625 L 46.75 20.15625 L 26 20.125 L 25 20.125 L 25 30.53125 L 36.4375 30.53125 C 34.710938 34.53125 31.195313 37.28125 26 37.28125 C 19.210938 37.28125 13.71875 31.789063 13.71875 25 C 13.71875 18.210938 19.210938 12.71875 26 12.71875 C 29.050781 12.71875 31.820313 13.847656 33.96875 15.6875 L 34.6875 16.28125 L 41.53125 9.4375 L 42.25 8.6875 L 41.5 8 C 37.414063 4.277344 31.960938 2 26 2 Z M 26 4 C 31.074219 4 35.652344 5.855469 39.28125 8.84375 L 34.46875 13.65625 C 32.089844 11.878906 29.199219 10.71875 26 10.71875 C 18.128906 10.71875 11.71875 17.128906 11.71875 25 C 11.71875 32.871094 18.128906 39.28125 26 39.28125 C 32.550781 39.28125 37.261719 35.265625 38.9375 29.8125 L 39.34375 28.53125 L 27 28.53125 L 27 22.125 L 45.84375 22.15625 C 46.507813 26.191406 46.066406 31.984375 43.375 36.8125 C 40.515625 41.9375 35.320313 46 26 46 C 14.386719 46 5 36.609375 5 25 C 5 13.390625 14.386719 4 26 4 Z"></path>
               </svg>
               Sign in with Google
             </button>
@@ -78,7 +79,7 @@ const Login = () => {
             onClick={handleSignOut}
             className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
           >
-            Sign Out of eBazaar
+            Sign Out of Aryloft
           </button>
         )}
       </div>
