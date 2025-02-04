@@ -49,98 +49,75 @@ A modern e-commerce experience with seamless Google authentication and state man
 
 ## 🛠️ Tech Stack
 
-| Category        | Technologies                                                                                     |
-|-----------------|--------------------------------------------------------------------------------------------------|
-| **Core**        | ![React](https://img.icons8.com/color/30/react-native.png) React 18 • ![Redux](https://img.icons8.com/color/30/redux.png) Redux Toolkit |
-| **Styling**     | ![Tailwind](https://img.icons8.com/color/30/tailwindcss.png) Tailwind CSS • CSS Modules          |
-| **Services**    | ![Firebase](https://img.icons8.com/color/30/firebase.png) Firebase Auth • ![Toast](https://img.icons8.com/color/30/notification.png) React Toastify |
-| **Routing**     | ![React Router](https://img.icons8.com/color/30/react-router.png) React Router 6                 |
-| **Build**       | ![Vite](https://img.icons8.com/color/30/vite.png) Vite • PostCSS                                 |
+- **Frontend:** React, Redux, Tailwind CSS
+- **Authentication:** Firebase (GoogleAuthProvider)
+- **Routing:** React Router
+- **Notifications:** React Toastify
 
----
+## 📦 Installation
 
-## 📥 Quick Start
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/yourusername/aryloft.git
+   cd aryloft
+   ```
 
-### 1. Clone & Install
-```bash
-git clone https://github.com/hack-09/Aryloft.git
-cd Aryloft/frontend
-npm install
-```
+2. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
 
-### 2. Firebase Configuration
-1. Create Firebase project at [console.firebase.google.com](https://console.firebase.google.com/)
-2. Enable **Google Sign-In** in Authentication
-3. Replace placeholder config in `firebase.config.js`:
-```javascript
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "your-project.firebaseapp.com",
-  // ... add your config details
-};
-```
+3. **Firebase Setup:**
+   - Create a Firebase project [here](https://console.firebase.google.com/).
+   - Enable Google Sign-In in the Authentication section.
+   - Replace the Firebase config in `firebase.config.js` with your project credentials.
 
-### 3. Launch Development Server
-```bash
-npm run dev
-```
-Visit `http://localhost:5173` in your browser
-
----
+4. **Run the Application:**
+   ```bash
+   npm start
+   ```
 
 ## 📂 Project Structure
 
-```arduino
-frontend/
-├── src
-│   ├── api/            # Firebase service layer
-│   ├── assets/         # Images & static files
-│   ├── components/     # Reusable UI components
-│   ├── pages/          # Route-based pages
-│   ├── redux/          # State management
-│   └── ...             # Configuration files
-server/
-├── server.js           # Mock backend API
+```
+aryloft/
+├── src/
+│   ├── components/
+│   │   └── Login.js
+│   ├── redux/
+│   │   └── bazarSlice.js
+│   ├── firebase.config.js
+│   └── App.js
+├── public/
+├── package.json
+└── README.md
 ```
 
----
+## ⚡ Usage
 
-## 🎥 Demo
+- **Sign In:** Click on "Sign in with Google" to authenticate.
+- **Sign Out:** Once signed in, click "Sign Out of Aryloft" to log out.
 
-| Homepage | Product View | Cart |
-|----------|--------------|------|
-| ![Home](https://github.com/user-attachments/assets/b188c298-4898-447f-9a84-b424e196e7df) | ![Products](https://github.com/user-attachments/assets/a2c5b013-3ecb-4c4d-8882-6f0db921d786) | ![Cart](https://github.com/user-attachments/assets/60fe7d87-7aa0-4f36-9a4a-4fed3e56daf9) |
+## 🎨 Screenshots
 
----
+_Add screenshots here to showcase your UI._
 
-## 🤝 Contributing
+## 📋 License
 
-We welcome contributions! Please follow these steps:
+This project is licensed under the [MIT License](LICENSE).
 
-1. 🍴 Fork the repository
-2. 🌿 Create your feature branch:  
-   `git checkout -b feature/AmazingFeature`
-3. 💾 Commit changes:  
-   `git commit -m 'Add some AmazingFeature'`
-4. 🚀 Push to branch:  
-   `git push origin feature/AmazingFeature`
-5. 🔀 Open a Pull Request
+## 🙌 Contributing
 
----
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a pull request
 
-## 📜 License
+## 💬 Contact
 
-Distributed under the MIT License. See `LICENSE` for more information.
+- **Developer:** Priyanshu Kumar
+- **GitHub:** [@yourusername](https://github.com/yourusername)
 
----
+Happy Coding! 🚀
 
-## 📬 Connect
-
-**Priyanshu Kumar**  
-[![GitHub](https://img.icons8.com/fluent/30/github.png)](https://github.com/hack-09) 
-[![LinkedIn](https://img.icons8.com/color/30/linkedin.png)](https://linkedin.com/in/yourprofile) 
-[![Email](https://img.icons8.com/color/30/gmail.png)](mailto:your.email@domain.com)
-
----
-
-Made with ❤️ and ☕ by the Aryloft team. Happy shopping! 🛒
